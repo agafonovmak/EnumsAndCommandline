@@ -1,12 +1,43 @@
 public enum Month {
-    JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
-    private int[] dayCount = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    JANUARY {
+        final int dayCount = 31;
+    },
+    FEBRUARY {
+        final int dayCount = 28;
+    },
+    MARCH {
+        final int dayCount = 31;
+    },
+    APRIL {
+        final int dayCount = 30;
+    },
+    MAY {
+        final int dayCount = 31;
+    },
+    JUNE {
+        final int dayCount = 30;
+    },
+    JULY {
+        final int dayCount = 31;
+    },
+    AUGUST {
+        final int dayCount = 31;
+    },
+    SEPTEMBER {
+        final int dayCount = 30;
+    },
+    OCTOBER {
+        final int dayCount = 31;
+    },
+    NOVEMBER {
+        final int dayCount = 30;
+    },
+    DECEMBER {
+        final int dayCount = 31;
+    };
 
     public Month next() {
         return values()[(ordinal() + 1) % values().length];
     }
 
-    public int getDayCount() {
-        return dayCount[ordinal()];
-    }
 }
